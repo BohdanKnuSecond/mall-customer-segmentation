@@ -1,6 +1,7 @@
 import json
 import subprocess
 import sys
+import time
 from importlib.metadata import version
 from pathlib import Path
 
@@ -397,8 +398,19 @@ def main():
     html = (f'<!doctype html><html lang="uk"><head><meta charset="utf-8">'
             f"<title>Customer Segmentation — Герасименко</title><style>{CSS}</style></head><body>{body}</body></html>")
     HTML_PATH.write_text(html, encoding="utf-8")
+    PDF_PATH.unlink(missing_ok=True)
     subprocess.run([EDGE, "--headless=new", "--disable-gpu", "--no-pdf-header-footer",
                     f"--print-to-pdf={PDF_PATH}", HTML_PATH.as_uri()], check=True, capture_output=True, timeout=120)
+    last, stable = -1, 0
+    for _ in range(120):
+        size = PDF_PATH.stat().st_size if PDF_PATH.exists() else -1
+        stable = stable + 1 if size == last and size > 0 else 0
+        if stable >= 4:
+            break
+        last = size
+        time.sleep(0.25)
+    else:
+        raise RuntimeError("PDF was not written")
     print(f"written {PDF_PATH}")
 
 
