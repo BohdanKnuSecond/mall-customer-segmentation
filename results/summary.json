@@ -1,0 +1,670 @@
+{
+  "describe": {
+    "age": {
+      "count": 200.0,
+      "mean": 38.85,
+      "std": 13.969,
+      "min": 18.0,
+      "25%": 28.75,
+      "50%": 36.0,
+      "75%": 49.0,
+      "max": 70.0,
+      "skew": 0.486,
+      "kurtosis": -0.672
+    },
+    "income": {
+      "count": 200.0,
+      "mean": 60.56,
+      "std": 26.265,
+      "min": 15.0,
+      "25%": 41.5,
+      "50%": 61.5,
+      "75%": 78.0,
+      "max": 137.0,
+      "skew": 0.322,
+      "kurtosis": -0.098
+    },
+    "spending": {
+      "count": 200.0,
+      "mean": 50.2,
+      "std": 25.824,
+      "min": 1.0,
+      "25%": 34.75,
+      "50%": 50.0,
+      "75%": 73.0,
+      "max": 99.0,
+      "skew": -0.047,
+      "kurtosis": -0.827
+    }
+  },
+  "checks": {
+    "missing": 0,
+    "duplicate_rows": 0,
+    "duplicate_ids": 0,
+    "duplicates_without_id": 0,
+    "bad_gender": 0,
+    "bad_age": 0,
+    "bad_income": 0,
+    "bad_spending": 0
+  },
+  "outliers": [
+    {
+      "feature": "age",
+      "q1": 28.75,
+      "q3": 49.0,
+      "low": -1.625,
+      "high": 79.375,
+      "iqr_outliers": 0,
+      "z_max": 2.236,
+      "z_outliers": 0
+    },
+    {
+      "feature": "income",
+      "q1": 41.5,
+      "q3": 78.0,
+      "low": -13.25,
+      "high": 132.75,
+      "iqr_outliers": 2,
+      "z_max": 2.918,
+      "z_outliers": 0
+    },
+    {
+      "feature": "spending",
+      "q1": 34.75,
+      "q3": 73.0,
+      "low": -22.625,
+      "high": 130.375,
+      "iqr_outliers": 0,
+      "z_max": 1.91,
+      "z_outliers": 0
+    }
+  ],
+  "income_outlier_rows": [
+    {
+      "id": 199,
+      "gender": "Male",
+      "age": 32,
+      "income": 137,
+      "spending": 18
+    },
+    {
+      "id": 200,
+      "gender": "Male",
+      "age": 30,
+      "income": 137,
+      "spending": 83
+    }
+  ],
+  "gender_counts": {
+    "Female": 112,
+    "Male": 88
+  },
+  "gender_tests": [
+    {
+      "feature": "age",
+      "female_mean": 38.0982,
+      "male_mean": 39.8068,
+      "female_median": 35.0,
+      "male_median": 37.0,
+      "U": 4728.5,
+      "p_value": 0.6242
+    },
+    {
+      "feature": "income",
+      "female_mean": 59.25,
+      "male_mean": 62.2273,
+      "female_median": 60.0,
+      "male_median": 62.5,
+      "U": 4596.0,
+      "p_value": 0.4144
+    },
+    {
+      "feature": "spending",
+      "female_mean": 51.5268,
+      "male_mean": 48.5114,
+      "female_median": 50.0,
+      "male_median": 50.0,
+      "U": 5158.5,
+      "p_value": 0.5713
+    }
+  ],
+  "age_groups": [
+    {
+      "age_group": "18–25",
+      "n": 38,
+      "income": 45.684,
+      "spending": 54.947,
+      "high_spenders": 0.395
+    },
+    {
+      "age_group": "26–35",
+      "n": 60,
+      "income": 68.15,
+      "spending": 64.45,
+      "high_spenders": 0.617
+    },
+    {
+      "age_group": "36–45",
+      "n": 36,
+      "income": 72.056,
+      "spending": 44.833,
+      "high_spenders": 0.278
+    },
+    {
+      "age_group": "46–55",
+      "n": 37,
+      "income": 57.73,
+      "spending": 36.703,
+      "high_spenders": 0.0
+    },
+    {
+      "age_group": "56–70",
+      "n": 29,
+      "income": 53.69,
+      "spending": 38.379,
+      "high_spenders": 0.0
+    }
+  ],
+  "corr_pearson": {
+    "age": {
+      "age": 1.0,
+      "income": -0.012,
+      "spending": -0.327,
+      "is_female": -0.061
+    },
+    "income": {
+      "age": -0.012,
+      "income": 1.0,
+      "spending": 0.01,
+      "is_female": -0.056
+    },
+    "spending": {
+      "age": -0.327,
+      "income": 0.01,
+      "spending": 1.0,
+      "is_female": 0.058
+    },
+    "is_female": {
+      "age": -0.061,
+      "income": -0.056,
+      "spending": 0.058,
+      "is_female": 1.0
+    }
+  },
+  "corr_spearman": {
+    "age": {
+      "age": 1.0,
+      "income": 0.02,
+      "spending": -0.345,
+      "is_female": -0.035
+    },
+    "income": {
+      "age": 0.02,
+      "income": 1.0,
+      "spending": 0.008,
+      "is_female": -0.058
+    },
+    "spending": {
+      "age": -0.345,
+      "income": 0.008,
+      "spending": 1.0,
+      "is_female": 0.04
+    },
+    "is_female": {
+      "age": -0.035,
+      "income": -0.058,
+      "spending": 0.04,
+      "is_female": 1.0
+    }
+  },
+  "hopkins": {
+    "F2": {
+      "mean": 0.7060886613489414,
+      "std": 0.050587573091815365
+    },
+    "F3": {
+      "mean": 0.695309859312289,
+      "std": 0.036688550949048444
+    },
+    "uniform": {
+      "mean": 0.493785193099073,
+      "std": 0.040656569084068624
+    }
+  },
+  "own_kmeans": {
+    "own_inertia": 65.56840815571681,
+    "sklearn_inertia": 65.56840815571681,
+    "ari": 1.0,
+    "max_center_diff": 3.3306690738754696e-16,
+    "own_n_iter": 10
+  },
+  "scans": {
+    "F2": [
+      {
+        "k": 2,
+        "inertia": 269.691,
+        "silhouette": 0.3213,
+        "calinski_harabasz": 95.6694,
+        "davies_bouldin": 1.267
+      },
+      {
+        "k": 3,
+        "inertia": 157.704,
+        "silhouette": 0.4666,
+        "calinski_harabasz": 151.3351,
+        "davies_bouldin": 0.7165
+      },
+      {
+        "k": 4,
+        "inertia": 108.9213,
+        "silhouette": 0.4939,
+        "calinski_harabasz": 174.5952,
+        "davies_bouldin": 0.7096
+      },
+      {
+        "k": 5,
+        "inertia": 65.5684,
+        "silhouette": 0.5547,
+        "calinski_harabasz": 248.6493,
+        "davies_bouldin": 0.5722
+      },
+      {
+        "k": 6,
+        "inertia": 55.0573,
+        "silhouette": 0.5399,
+        "calinski_harabasz": 243.0879,
+        "davies_bouldin": 0.6546
+      },
+      {
+        "k": 7,
+        "inertia": 44.8648,
+        "silhouette": 0.5281,
+        "calinski_harabasz": 254.6212,
+        "davies_bouldin": 0.7148
+      },
+      {
+        "k": 8,
+        "inertia": 37.1481,
+        "silhouette": 0.4567,
+        "calinski_harabasz": 267.9142,
+        "davies_bouldin": 0.7579
+      },
+      {
+        "k": 9,
+        "inertia": 32.3923,
+        "silhouette": 0.4571,
+        "calinski_harabasz": 270.9484,
+        "davies_bouldin": 0.7632
+      },
+      {
+        "k": 10,
+        "inertia": 29.6858,
+        "silhouette": 0.4362,
+        "calinski_harabasz": 263.3497,
+        "davies_bouldin": 0.7645
+      }
+    ],
+    "F3": [
+      {
+        "k": 2,
+        "inertia": 389.3862,
+        "silhouette": 0.3355,
+        "calinski_harabasz": 107.0956,
+        "davies_bouldin": 1.2607
+      },
+      {
+        "k": 3,
+        "inertia": 295.2122,
+        "silhouette": 0.3578,
+        "calinski_harabasz": 101.6949,
+        "davies_bouldin": 1.0503
+      },
+      {
+        "k": 4,
+        "inertia": 205.2251,
+        "silhouette": 0.404,
+        "calinski_harabasz": 125.6764,
+        "davies_bouldin": 0.9308
+      },
+      {
+        "k": 5,
+        "inertia": 168.2476,
+        "silhouette": 0.4166,
+        "calinski_harabasz": 125.1009,
+        "davies_bouldin": 0.8746
+      },
+      {
+        "k": 6,
+        "inertia": 133.8683,
+        "silhouette": 0.4274,
+        "calinski_harabasz": 135.1022,
+        "davies_bouldin": 0.8277
+      },
+      {
+        "k": 7,
+        "inertia": 117.0116,
+        "silhouette": 0.4172,
+        "calinski_harabasz": 132.7743,
+        "davies_bouldin": 0.7935
+      },
+      {
+        "k": 8,
+        "inertia": 103.8286,
+        "silhouette": 0.4087,
+        "calinski_harabasz": 131.0744,
+        "davies_bouldin": 0.8893
+      },
+      {
+        "k": 9,
+        "inertia": 92.3495,
+        "silhouette": 0.4201,
+        "calinski_harabasz": 131.2423,
+        "davies_bouldin": 0.8541
+      },
+      {
+        "k": 10,
+        "inertia": 81.9871,
+        "silhouette": 0.3973,
+        "calinski_harabasz": 133.3848,
+        "davies_bouldin": 0.9056
+      }
+    ]
+  },
+  "votes": {
+    "F2": {
+      "elbow": 5,
+      "silhouette": 5,
+      "calinski_harabasz": 9,
+      "davies_bouldin": 5
+    },
+    "F3": {
+      "elbow": 4,
+      "silhouette": 6,
+      "calinski_harabasz": 6,
+      "davies_bouldin": 7
+    }
+  },
+  "init": {
+    "best_inertia": 65.56840815571681,
+    "k-means++": {
+      "mean_inertia": 71.9205,
+      "worst_inertia": 100.6084,
+      "share_global": 0.59,
+      "mean_iter": 4.75
+    },
+    "random": {
+      "mean_inertia": 81.951,
+      "worst_inertia": 136.2743,
+      "share_global": 0.32,
+      "mean_iter": 7.09
+    }
+  },
+  "profile": [
+    {
+      "cluster": 0,
+      "segment": "Преміум-покупці",
+      "n": 39,
+      "share": 0.195,
+      "income": 86.538,
+      "spending": 82.128,
+      "age": 32.692,
+      "age_std": 3.729,
+      "age_min": 27,
+      "age_max": 40,
+      "female_share": 0.538,
+      "silhouette": 0.511
+    },
+    {
+      "cluster": 1,
+      "segment": "Стримані заможні",
+      "n": 35,
+      "share": 0.175,
+      "income": 88.2,
+      "spending": 17.114,
+      "age": 41.114,
+      "age_std": 11.342,
+      "age_min": 19,
+      "age_max": 59,
+      "female_share": 0.457,
+      "silhouette": 0.505
+    },
+    {
+      "cluster": 2,
+      "segment": "Масовий сегмент",
+      "n": 81,
+      "share": 0.405,
+      "income": 55.296,
+      "spending": 49.519,
+      "age": 42.716,
+      "age_std": 16.448,
+      "age_min": 18,
+      "age_max": 70,
+      "female_share": 0.593,
+      "silhouette": 0.598
+    },
+    {
+      "cluster": 3,
+      "segment": "Активні з малим доходом",
+      "n": 22,
+      "share": 0.11,
+      "income": 25.727,
+      "spending": 79.364,
+      "age": 25.273,
+      "age_std": 5.257,
+      "age_min": 18,
+      "age_max": 35,
+      "female_share": 0.591,
+      "silhouette": 0.598
+    },
+    {
+      "cluster": 4,
+      "segment": "Ощадливі",
+      "n": 23,
+      "share": 0.115,
+      "income": 26.304,
+      "spending": 20.913,
+      "age": 45.217,
+      "age_std": 13.229,
+      "age_min": 19,
+      "age_max": 67,
+      "female_share": 0.609,
+      "silhouette": 0.511
+    }
+  ],
+  "centers": [
+    {
+      "cluster": 0,
+      "income": 86.54,
+      "spending": 82.13
+    },
+    {
+      "cluster": 1,
+      "income": 88.2,
+      "spending": 17.11
+    },
+    {
+      "cluster": 2,
+      "income": 55.3,
+      "spending": 49.52
+    },
+    {
+      "cluster": 3,
+      "income": 25.73,
+      "spending": 79.36
+    },
+    {
+      "cluster": 4,
+      "income": 26.3,
+      "spending": 20.91
+    }
+  ],
+  "f3": {
+    "silhouette": 0.42742814991580175,
+    "ari_vs_f2": 0.6914669921848264,
+    "profile": [
+      {
+        "cluster_f3": 0,
+        "n": 24,
+        "age": 25.25,
+        "income": 25.83,
+        "spending": 76.92
+      },
+      {
+        "cluster_f3": 1,
+        "n": 21,
+        "age": 45.52,
+        "income": 26.29,
+        "spending": 19.38
+      },
+      {
+        "cluster_f3": 2,
+        "n": 45,
+        "age": 56.33,
+        "income": 54.27,
+        "spending": 49.07
+      },
+      {
+        "cluster_f3": 3,
+        "n": 38,
+        "age": 26.68,
+        "income": 57.58,
+        "spending": 47.79
+      },
+      {
+        "cluster_f3": 4,
+        "n": 39,
+        "age": 32.69,
+        "income": 86.54,
+        "spending": 82.13
+      },
+      {
+        "cluster_f3": 5,
+        "n": 33,
+        "age": 41.94,
+        "income": 88.94,
+        "spending": 16.97
+      }
+    ],
+    "cross": {
+      "Преміум-покупці": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 39,
+        "5": 0
+      },
+      "Стримані заможні": {
+        "0": 0,
+        "1": 0,
+        "2": 1,
+        "3": 2,
+        "4": 0,
+        "5": 32
+      },
+      "Масовий сегмент": {
+        "0": 1,
+        "1": 0,
+        "2": 43,
+        "3": 36,
+        "4": 0,
+        "5": 1
+      },
+      "Активні з малим доходом": {
+        "0": 22,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0
+      },
+      "Ощадливі": {
+        "0": 1,
+        "1": 21,
+        "2": 1,
+        "3": 0,
+        "4": 0,
+        "5": 0
+      }
+    }
+  },
+  "ari_unscaled_vs_scaled": {
+    "F2": 1.0,
+    "F3": 0.9450619786972076
+  },
+  "quality": {
+    "silhouette": 0.5546571631111091,
+    "davies_bouldin": 0.5722356162263352,
+    "calinski_harabasz": 248.64932001536357,
+    "inertia": 65.56840815571681,
+    "negative_silhouette": 2,
+    "low_silhouette": 11
+  },
+  "stability": {
+    "ari_mean": 0.9710589441248255,
+    "ari_std": 0.02389498165772426,
+    "ari_min": 0.8703755501827419,
+    "jaccard_mean": {
+      "Преміум-покупці": 0.9998717948717949,
+      "Стримані заможні": 0.97145485334959,
+      "Масовий сегмент": 0.9753877943206102,
+      "Активні з малим доходом": 0.9808703947992167,
+      "Ощадливі": 0.9770665551839466
+    },
+    "jaccard_p05": {
+      "Преміум-покупці": 1.0,
+      "Стримані заможні": 0.9210526315789473,
+      "Масовий сегмент": 0.9397590361445783,
+      "Активні з малим доходом": 0.9545454545454546,
+      "Ощадливі": 0.9130434782608695
+    }
+  },
+  "alternatives": {
+    "K-means": {
+      "silhouette": 0.5546571631111091,
+      "ari": 1.0,
+      "clusters": 5,
+      "noise": 0.0
+    },
+    "Agglomerative (Ward)": {
+      "silhouette": 0.5538089226688662,
+      "ari": 0.9419606318143182,
+      "clusters": 5,
+      "noise": 0.0
+    },
+    "DBSCAN": {
+      "silhouette": 0.513507114519068,
+      "ari": 0.8527635144906441,
+      "clusters": 7,
+      "noise": 0.09,
+      "eps": 0.32,
+      "min_samples": 4
+    }
+  },
+  "pca": {
+    "explained": [
+      0.4427,
+      0.3331,
+      0.2243
+    ],
+    "loadings": {
+      "PC1": {
+        "age": 0.706,
+        "income": -0.048,
+        "spending": -0.706
+      },
+      "PC2": {
+        "age": 0.03,
+        "income": 0.999,
+        "spending": -0.038
+      },
+      "PC3": {
+        "age": 0.707,
+        "income": 0.005,
+        "spending": 0.707
+      }
+    }
+  },
+  "age_kruskal_p": 2.1075190243879856e-08,
+  "gender_chi2_p": 0.6931640962057115
+}
