@@ -9,7 +9,7 @@ REPORT_DIR = ROOT / "report"
 HTML_PATH = REPORT_DIR / "report.html"
 PDF_PATH = REPORT_DIR / "Звіт_Customer_Segmentation_Герасименко.pdf"
 EDGE = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
-REPO_URL = ""
+REPO_URL = "https://github.com/BohdanKnuSecond/mall-customer-segmentation"
 
 S = json.loads((ROOT / "results" / "summary.json").read_text(encoding="utf-8"))
 
